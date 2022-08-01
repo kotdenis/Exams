@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <form (ngSubmit)="onConfirm()" #registerForm="ngForm">
+                <h1 class="text-center">Sign up</h1>
+                <div>
+                    <label class="form-label">Username&nbsp;*</label>
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="name" required [(ngModel)]="registerModel.userName"
+                        name="userName" #name="ngModel">
+                </div>
+                <div>
+                    <label class="form-label">Email&nbsp;*</label>
+                </div>
+                <div>
+                    <input type="email" class="form-control" id="email" required [(ngModel)]="registerModel.email"
+                        name="email" #email="ngModel">
+                </div>
+                <div>
+                    <label class="form-label">Password&nbsp;*</label>
+                </div>
+                <div>
+                    <input type="password" class="form-control" id="password" required
+                        [(ngModel)]="registerModel.password" name="password" #name="ngModel">
+                </div>
+                <div>
+                    <label class="form-label">Confirm password&nbsp;*</label>
+                </div>
+                <div>
+                    <input type="password" class="form-control" id="confirmPassword" required
+                        [(ngModel)]="confirmPassword" name="confirmPassword" #name="ngModel">
+                </div>
+                <div>
+                    <label class="form-label">Roles&nbsp;*</label>
+                </div>
+                <div>
+                    <select class="form-control" id="roles" required [(ngModel)]="registerModel.role" name="role"
+                        #role="ngModel" placeholder="Select role">
+                        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                    </select>
+                </div>
+                <div class="d-flex" id="divButtons">
+                    <button [disabled]="!registerForm.form.valid" class="btn btn-success float-right"
+                        id="buttonSubmit">Confirm</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
